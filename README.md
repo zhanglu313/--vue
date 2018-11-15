@@ -113,7 +113,17 @@ package的锁文件，帮助我们去确定安装的第三方包的版本信息�
 #解决移动端点击300毫秒延迟问题
 引入fastclick库，打开终端，安装第三方模块 npm i fastclick -save ,在main.js中引入，import fastClick from 'fastclick',fastClick.attach(document.body)
 
-#n
+#安装stylus,stylus-loader
+npm i stylus stylus-loader --save
+
+#安装less,less-loader
+npm i less less-loader --save
+
+#如果通过less或者stylus来制定公共样式变量
+在style下面新建一个变量样式文件varibles.less或者varibles.styl,文件里面写上制定的变量，如：@bgColor：颜色 或者 $bgColor:颜色（stylus用$), 然后在需要用到的单文件件组件样式中引入这个varibles文件 ，@import  '../../../assets/style/varibles';
+
+#如何修改配置代替style这个目录
+在build文件下的webpack.base.conf.js 下的@下增加一项配置：‘styles’:resolve('src/assets/styles')
 ```
 
 
